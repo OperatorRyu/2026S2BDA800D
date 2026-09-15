@@ -1,0 +1,1 @@
+The selected Synthea FHIR dataset consists of 129,218 JSON bundles containing 8,913,460 clinical resources across 10 FHIR resource types. No malformed JSON files were detected during reconnaissance. Referential integrity analysis found no broken internal references among the examined relationships.
