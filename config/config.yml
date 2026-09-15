@@ -1,0 +1,11 @@
+project:
+  name: "Healthcare Big Data Analytics"
+  dataset: "Synthea EHR JSON"
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+
+reconnaissance:
+  sample_size: 10
+
