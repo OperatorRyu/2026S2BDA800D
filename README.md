@@ -16,9 +16,9 @@ Veracity: Synthetic data still requires schema/quality validation and consistenc
 Value: 	Patient trends, healthcare utilisation, disease/medication patterns
 
 Business Problem:
-How can longitudinal electronic health record data be analysed to identify patient health patterns and healthcare utilisation trends that can support better clinical and resource-planning decisions?
+How can longitudinal electronic health record data be used to identify patterns associated with healthcare utilisation and patient health outcomes, enabling healthcare organisations to improve resource planning and patient management?
 
-Descriptive questions:
+Questions:
 - What are the most common conditions?
 
 - How does healthcare utilisation vary by age and demographic group?
@@ -27,14 +27,14 @@ Descriptive questions:
 
 - What medications and procedures are most frequently recorded?
 
-Diagnostic questions:
-- What patient characteristics are associated with increased healthcare utilisation?
+- Which patient characteristics and clinical conditions are associated with higher healthcare utilisation?
 
-- Which conditions tend to occur together?
+- Which conditions, observations and medications commonly occur together?
 
-- Are certain conditions associated with repeated encounters?
+- How do healthcare utilisation and clinical events change over time?
 
-Predictive:
+- Can historical patient information be used to predict high healthcare utilisation?
 
+- Which patient groups generate the greatest demand for healthcare services?
 
 

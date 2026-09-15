@@ -20,11 +20,13 @@ FHIR JSON
 - Encoding:
 - Data format:
 
+The selected dataset consists of 129,218 FHIR JSON bundles containing 8,913,460 individual healthcare resources. The resources represent patients and longitudinal clinical events including observations, encounters, immunizations, procedures, conditions, medications, diagnostic reports, care plans and allergies. The dataset therefore provides substantial volume and structural variety for the application of Big Data processing techniques.
+
 ## 3. Big Data Characteristics
 
 ### Volume
 
-...
+8.9 million resources / ~13 GB extracted
 
 ### Velocity
 
@@ -32,7 +34,7 @@ FHIR JSON
 
 ### Variety
 
-...
+10 FHIR resource types, with nested JSON structures.
 
 ### Veracity
 
