@@ -1,0 +1,419 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.reference_profile
+============================================================
+FHIR REFERENCE RECONNAISSANCE
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+SUMMARY
+============================================================
+Resources processed : 8,913,460
+Malformed files     : 0
+Processing time     : 49.64 seconds
+
+============================================================
+REFERENCE FIELDS
+============================================================
+
+Patient
+------------------------------------------------------------
+
+Encounter
+------------------------------------------------------------
+  patient                    1,201,625
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+
+Condition
+------------------------------------------------------------
+  subject                      469,866
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      469,866
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+
+Observation
+------------------------------------------------------------
+  subject                    4,756,568
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                  4,756,568
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+
+Immunization
+------------------------------------------------------------
+  patient                      862,744
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                    862,744
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:0c118604-3a27-459e-be14-30f352b2148d
+
+MedicationRequest
+------------------------------------------------------------
+  patient                      334,869
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      334,869
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+  reasonReference              146,035
+      example: urn:uuid:fcf40633-e49c-4bf9-b806-f9504fb6eea4
+      example: urn:uuid:a9aebf91-3c7b-4a6e-98fe-b7377ab7acb8
+      example: urn:uuid:1cab7b35-63e9-4f69-845f-c4a8e813c8e7
+
+Procedure
+------------------------------------------------------------
+  subject                      563,951
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.reference_profile
+============================================================
+FHIR REFERENCE RECONNAISSANCE
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+SUMMARY
+============================================================
+Resources processed : 8,913,460
+Malformed files     : 0
+Processing time     : 48.21 seconds
+
+============================================================
+REFERENCE FIELDS
+============================================================
+
+Patient
+------------------------------------------------------------
+
+Encounter
+------------------------------------------------------------
+  patient                    1,201,625
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+
+Condition
+------------------------------------------------------------
+  subject                      469,866
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      469,866
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+
+Observation
+------------------------------------------------------------
+  subject                    4,756,568
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                  4,756,568
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+
+Immunization
+------------------------------------------------------------
+  patient                      862,744
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                    862,744
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:0c118604-3a27-459e-be14-30f352b2148d
+
+MedicationRequest
+------------------------------------------------------------
+  patient                      334,869
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      334,869
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+  reasonReference              146,035
+      example: urn:uuid:fcf40633-e49c-4bf9-b806-f9504fb6eea4
+      example: urn:uuid:a9aebf91-3c7b-4a6e-98fe-b7377ab7acb8
+      example: urn:uuid:1cab7b35-63e9-4f69-845f-c4a8e813c8e7
+
+Procedure
+------------------------------------------------------------
+  subject                      563,951
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.reference_integrity
+============================================================
+FHIR REFERENCE INTEGRITY ANALYSIS
+============================================================
+============================================================
+PASS 1 — BUILDING RESOURCE ID INDEX
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+ID INDEX
+------------------------------------------------------------
+Condition                     469,866
+DiagnosticReport              304,845
+Encounter                   1,201,625
+Observation                 4,756,568
+Patient                       129,218
+
+Resources indexed : 6,862,122
+Malformed files   : 0
+
+============================================================
+PASS 2 — VALIDATING REFERENCES
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+REFERENCE INTEGRITY RESULTS
+============================================================
+
+AllergyIntolerance.patient
+------------------------------------------------------------
+References : 51,107
+Valid      : 51,107 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                        51,107
+
+CarePlan.addresses
+------------------------------------------------------------
+References : 177,968
+Valid      : 177,968 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Condition                     177,968
+
+CarePlan.context
+------------------------------------------------------------
+References : 238,667
+Valid      : 238,667 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     238,667
+
+CarePlan.subject
+------------------------------------------------------------
+References : 238,667
+Valid      : 238,667 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       238,667
+
+Condition.context
+------------------------------------------------------------
+References : 469,866
+Valid      : 469,866 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     469,866
+
+Condition.subject
+------------------------------------------------------------
+References : 469,866
+Valid      : 469,866 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       469,866
+
+DiagnosticReport.encounter
+------------------------------------------------------------
+References : 304,845
+Valid      : 304,845 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     304,845
+
+DiagnosticReport.result
+------------------------------------------------------------
+References : 1,823,492
+Valid      : 1,823,492 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Observation                 1,823,492
+
+DiagnosticReport.subject
+------------------------------------------------------------
+References : 304,845
+Valid      : 304,845 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       304,845
+
+Encounter.patient
+------------------------------------------------------------
+References : 1,201,625
+Valid      : 1,201,625 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                     1,201,625
+
+Immunization.encounter
+------------------------------------------------------------
+References : 862,744
+Valid      : 862,744 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     862,744
+
+Immunization.patient
+------------------------------------------------------------
+References : 862,744
+Valid      : 862,744 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       862,744
+
+MedicationRequest.context
+------------------------------------------------------------
+References : 334,869
+Valid      : 334,869 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     334,869
+
+MedicationRequest.patient
+------------------------------------------------------------
+References : 334,869
+Valid      : 334,869 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       334,869
+
+MedicationRequest.reasonReference
+------------------------------------------------------------
+References : 146,035
+Valid      : 146,035 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Condition                     146,035
+
+Observation.encounter
+------------------------------------------------------------
+References : 4,756,568
+Valid      : 4,756,568 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                   4,756,568
+
+Observation.subject
+------------------------------------------------------------
+References : 4,756,568
+Valid      : 4,756,568 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                     4,756,568
+
+Procedure.encounter
+------------------------------------------------------------
+References : 563,951
+Valid      : 563,951 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Encounter                     563,951
+
+Procedure.reasonReference
+------------------------------------------------------------
+References : 159,195
+Valid      : 159,195 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Condition                     159,195
+
+Procedure.subject
+------------------------------------------------------------
+References : 563,951
+Valid      : 563,951 (100.00%)
+Broken     : 0 (  0.00%)
+External   : 0
+Target resource types:
+  Patient                       563,951
+
+============================================================
+COMPLETE
+============================================================
+Total processing time : 125.27 seconds
+Malformed files       : 0
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 

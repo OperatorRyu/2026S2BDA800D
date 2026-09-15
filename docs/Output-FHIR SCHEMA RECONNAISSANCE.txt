@@ -1,0 +1,162 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.schema_profile
+============================================================
+FHIR SCHEMA RECONNAISSANCE
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+SUMMARY
+============================================================
+Resources processed : 8,913,460
+Malformed files     : 0
+Processing time     : 45.53 seconds
+
+============================================================
+RESOURCE SCHEMAS
+============================================================
+
+Observation
+------------------------------------------------------------
+Records: 4,756,568
+  id                             4,756,568 (100.00%)
+  status                         4,756,568 (100.00%)
+  code                           4,756,568 (100.00%)
+  subject                        4,756,568 (100.00%)
+  encounter                      4,756,568 (100.00%)
+  effectiveDateTime              4,756,568 (100.00%)
+  resourceType                   4,756,568 (100.00%)
+  valueQuantity                  4,167,078 ( 87.61%)
+  component                        578,942 ( 12.17%)
+  valueCodeableConcept              10,548 (  0.22%)
+
+Encounter
+------------------------------------------------------------
+Records: 1,201,625
+  id                             1,201,625 (100.00%)
+  status                         1,201,625 (100.00%)
+  type                           1,201,625 (100.00%)
+  patient                        1,201,625 (100.00%)
+  period                         1,201,625 (100.00%)
+  resourceType                   1,201,625 (100.00%)
+  class                          1,201,621 (100.00%)
+  reason                           373,688 ( 31.10%)
+
+Immunization
+------------------------------------------------------------
+Records: 862,744
+  status                           862,744 (100.00%)
+  date                             862,744 (100.00%)
+  vaccineCode                      862,744 (100.00%)
+  patient                          862,744 (100.00%)
+  wasNotGiven                      862,744 (100.00%)
+  primarySource                    862,744 (100.00%)
+  encounter                        862,744 (100.00%)
+  resourceType                     862,744 (100.00%)
+
+Procedure
+------------------------------------------------------------
+Records: 563,951
+  status                           563,951 (100.00%)
+  code                             563,951 (100.00%)
+  subject                          563,951 (100.00%)
+  encounter                        563,951 (100.00%)
+  resourceType                     563,951 (100.00%)
+  performedDateTime                354,906 ( 62.93%)
+  performedPeriod                  209,045 ( 37.07%)
+  reasonReference                  159,195 ( 28.23%)
+
+Condition
+------------------------------------------------------------
+Records: 469,866
+  id                               469,866 (100.00%)
+  clinicalStatus                   469,866 (100.00%)
+  verificationStatus               469,866 (100.00%)
+  code                             469,866 (100.00%)
+  subject                          469,866 (100.00%)
+  context                          469,866 (100.00%)
+  onsetDateTime                    469,866 (100.00%)
+  resourceType                     469,866 (100.00%)
+  abatementDateTime                271,990 ( 57.89%)
+
+MedicationRequest
+------------------------------------------------------------
+Records: 334,869
+  status                           334,869 (100.00%)
+  stage                            334,869 (100.00%)
+  medicationCodeableConcept        334,869 (100.00%)
+  patient                          334,869 (100.00%)
+  context                          334,869 (100.00%)
+  dateWritten                      334,869 (100.00%)
+  dosageInstruction                334,869 (100.00%)
+  resourceType                     334,869 (100.00%)
+  reasonReference                  146,035 ( 43.61%)
+  dispenseRequest                   20,276 (  6.05%)
+
+DiagnosticReport
+------------------------------------------------------------
+Records: 304,845
+  id                               304,845 (100.00%)
+  status                           304,845 (100.00%)
+  code                             304,845 (100.00%)
+  subject                          304,845 (100.00%)
+  encounter                        304,845 (100.00%)
+  effectiveDateTime                304,845 (100.00%)
+  issued                           304,845 (100.00%)
+  performer                        304,845 (100.00%)
+  result                           304,845 (100.00%)
+  resourceType                     304,845 (100.00%)
+
+CarePlan
+------------------------------------------------------------
+Records: 238,667
+  status                           238,667 (100.00%)
+  category                         238,667 (100.00%)
+  subject                          238,667 (100.00%)
+  context                          238,667 (100.00%)
+  period                           238,667 (100.00%)
+  activity                         238,667 (100.00%)
+  resourceType                     238,667 (100.00%)
+  addresses                        177,725 ( 74.47%)
+
+Patient
+------------------------------------------------------------
+Records: 129,218
+  id                               129,218 (100.00%)
+  text                             129,218 (100.00%)
+  extension                        129,218 (100.00%)
+  identifier                       129,218 (100.00%)
+  name                             129,218 (100.00%)
+  telecom                          129,218 (100.00%)
+  gender                           129,218 (100.00%)
+  birthDate                        129,218 (100.00%)
+  address                          129,218 (100.00%)
+  photo                            129,218 (100.00%)
+  resourceType                     129,218 (100.00%)
+  multipleBirthBoolean             126,597 ( 97.97%)
+  maritalStatus                     93,040 ( 72.00%)
+  deceasedDateTime                  29,729 ( 23.01%)
+  multipleBirthInteger               2,621 (  2.03%)
+
+AllergyIntolerance
+------------------------------------------------------------
+Records: 51,107
+  clinicalStatus                    51,107 (100.00%)
+  type                              51,107 (100.00%)
+  category                          51,107 (100.00%)
+  criticality                       51,107 (100.00%)
+  code                              51,107 (100.00%)
+  patient                           51,107 (100.00%)
+  assertedDate                      51,107 (100.00%)
+  resourceType                      51,107 (100.00%)
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 

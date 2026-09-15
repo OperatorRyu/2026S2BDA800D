@@ -1,22 +1,29 @@
 # 2026S2BDA800D
-Project: Big Data Analytics Syndicate
-Module: Big Data Analytics 800
-Industry: Healthcare
-Dataset: Under evaluation
-Objective: Develop a reproducible data analytics pipeline demonstrating the Big Data Analytics Life Cycle, from data acquisition and extraction through validation, aggregation, analysis and visualisation.
+Project: 
+Big Data Analytics Syndicate Assignment
+Module: 
+Big Data Analytics 800
+Industry: 
+Healthcare
+Dataset: 
+Under evaluation
+Objective: 
+Develop a reproducible data analytics pipeline demonstrating the Big Data Analytics Life Cycle, from data acquisition and extraction through validation, aggregation, analysis and visualisation.
 
-Proposed technologies: Python, Apache Spark, Docker, PostgreSQL/MongoDB, Jupyter, Power BI/Tableau.
+Proposed technologies: 
+Python, Apache Spark, Docker, PostgreSQL/MongoDB, Jupyter, Power BI/Tableau.
 
-Infrastructure objective: Provide a reproducible containerised environment that allows every group member to acquire, process and analyse the same dataset using the same software dependencies and pipeline configuration.
+Infrastructure objective: 
+Provide a reproducible containerised environment that allows every group member to acquire, process and analyse the same dataset using the same software dependencies and pipeline configuration.
 
 Volume: 192k files over 10.83 GB
-Velocity: Timestamped longitudinal clinical events, can simulate ingestion
-Variety: FHIR JSON containing patients, encounters, observations, medications, procedures, etc.
-Veracity: Synthetic data still requires schema/quality validation and consistency checks.
-Value: 	Patient trends, healthcare utilisation, disease/medication patterns
+Velocity: Millions of timestamped longitudinal clinical events can be processed chronologically.
+Variety: 10 FHIR resource types with different schemas.
+Veracity: Validation required despite synthetic origin; optional fields and references need checking
+Value: 	Healthcare utilisation and clinical patterns can support analytical/resource-planning questions
 
 Business Problem:
-How can longitudinal electronic health record data be used to identify patterns associated with healthcare utilisation and patient health outcomes, enabling healthcare organisations to improve resource planning and patient management?
+To analyse longitudinal electronic health record data to identify patterns in healthcare utilisation and patient clinical characteristics, with the aim of supporting healthcare resource planning and patient management.
 
 Questions:
 - What are the most common conditions?

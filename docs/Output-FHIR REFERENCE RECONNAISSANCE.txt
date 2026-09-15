@@ -1,0 +1,139 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.reference_profile
+============================================================
+FHIR REFERENCE RECONNAISSANCE
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+SUMMARY
+============================================================
+Resources processed : 8,913,460
+Malformed files     : 0
+Processing time     : 49.64 seconds
+
+============================================================
+REFERENCE FIELDS
+============================================================
+
+Patient
+------------------------------------------------------------
+
+Encounter
+------------------------------------------------------------
+  patient                    1,201,625
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+
+Condition
+------------------------------------------------------------
+  subject                      469,866
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      469,866
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+
+Observation
+------------------------------------------------------------
+  subject                    4,756,568
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                  4,756,568
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+
+Immunization
+------------------------------------------------------------
+  patient                      862,744
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                    862,744
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:0c118604-3a27-459e-be14-30f352b2148d
+
+MedicationRequest
+------------------------------------------------------------
+  patient                      334,869
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      334,869
+      example: urn:uuid:fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+  reasonReference              146,035
+      example: urn:uuid:fcf40633-e49c-4bf9-b806-f9504fb6eea4
+      example: urn:uuid:a9aebf91-3c7b-4a6e-98fe-b7377ab7acb8
+      example: urn:uuid:1cab7b35-63e9-4f69-845f-c4a8e813c8e7
+
+Procedure
+------------------------------------------------------------
+  subject                      563,951
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+  encounter                    563,951
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:5a36cf69-5139-4b3d-9efd-2a828d7762e0
+      example: urn:uuid:ffe390b1-20f7-44bd-a863-9a256fd6c84d
+  reasonReference              159,195
+      example: urn:uuid:fcf40633-e49c-4bf9-b806-f9504fb6eea4
+      example: urn:uuid:a9aebf91-3c7b-4a6e-98fe-b7377ab7acb8
+      example: urn:uuid:1cab7b35-63e9-4f69-845f-c4a8e813c8e7
+
+CarePlan
+------------------------------------------------------------
+  subject                      238,667
+      example: urn:uuid:6bb7cb36-4921-409d-aa5b-91af52c88713
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  context                      238,667
+      example: urn:uuid:535b0a4c-7a3a-416b-9cf8-aa001a2ded8f
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+      example: urn:uuid:8caa0e3b-2862-469b-8f38-19688716beae
+  addresses                    177,968
+      example: urn:uuid:fcf40633-e49c-4bf9-b806-f9504fb6eea4
+      example: urn:uuid:f49c381e-8938-46c4-8fde-459a4e55100a
+      example: urn:uuid:56bbb662-910e-4984-86b6-031c214f15e3
+
+DiagnosticReport
+------------------------------------------------------------
+  subject                      304,845
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+      example: urn:uuid:06c72407-b929-49bf-85c0-e2f698c1db58
+  encounter                    304,845
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+      example: urn:uuid:33665cde-8f04-451a-b2ea-a5ab8315a5bb
+      example: urn:uuid:aa1186aa-a178-4b3c-9c18-8f12c21631ae
+  performer                          0
+  result                     1,823,492
+      example: urn:uuid:19ca6807-a363-4234-8ba5-34a761dbc141
+      example: urn:uuid:b8185953-9c70-404f-8568-3fb58b456ec1
+      example: urn:uuid:940a769f-c495-42bb-8e33-1333b6d9433c
+
+AllergyIntolerance
+------------------------------------------------------------
+  patient                       51,107
+      example: urn:uuid:9c1195b4-2b12-4e0a-95cf-10711c4693ee
+      example: urn:uuid:9c1195b4-2b12-4e0a-95cf-10711c4693ee
+      example: urn:uuid:9c1195b4-2b12-4e0a-95cf-10711c4693ee
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 

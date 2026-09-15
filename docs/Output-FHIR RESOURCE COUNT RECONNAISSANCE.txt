@@ -1,0 +1,44 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.reconnaissance.resource_counts
+============================================================
+FHIR RESOURCE COUNT RECONNAISSANCE
+============================================================
+Processed 10,000 files...
+Processed 20,000 files...
+Processed 30,000 files...
+Processed 40,000 files...
+Processed 50,000 files...
+Processed 60,000 files...
+Processed 70,000 files...
+Processed 80,000 files...
+Processed 90,000 files...
+Processed 100,000 files...
+Processed 110,000 files...
+Processed 120,000 files...
+
+============================================================
+RESULTS
+============================================================
+JSON files processed : 129,218
+Resources processed  : 8,913,460
+Malformed files      : 0
+Processing time      : 26.06 seconds
+
+RESOURCE TYPE COUNTS
+------------------------------------------------------------
+Observation                 4,756,568 ( 53.36%)
+Encounter                   1,201,625 ( 13.48%)
+Immunization                  862,744 (  9.68%)
+Procedure                     563,951 (  6.33%)
+Condition                     469,866 (  5.27%)
+MedicationRequest             334,869 (  3.76%)
+DiagnosticReport              304,845 (  3.42%)
+CarePlan                      238,667 (  2.68%)
+Patient                       129,218 (  1.45%)
+AllergyIntolerance             51,107 (  0.57%)
+------------------------------------------------------------
+TOTAL                       8,913,460
+
+============================================================
+COMPLETE
+============================================================
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 
