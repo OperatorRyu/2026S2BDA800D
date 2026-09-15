@@ -1,52 +1,97 @@
 from __future__ import annotations
 
-from datetime import datetime
 from typing import Any
 
 
+# ---------------------------------------------------------------------------
+# Generic helpers
+# ---------------------------------------------------------------------------
+
 def reference_id(value: Any) -> str | None:
-    """Extract the UUID/resource ID from a FHIR reference."""
+    """Extract the resource ID from a FHIR Reference."""
     if not isinstance(value, dict):
         return None
 
     reference = value.get("reference")
 
-    if not reference:
+    if not isinstance(reference, str) or not reference:
         return None
 
-    # Handles references such as:
-    # urn:uuid:6bb7cb36-...
-    # Patient/6bb7cb36-...
-    return reference.split("/")[-1].removeprefix("urn:uuid:")
+    if reference.startswith("urn:uuid:"):
+        return reference.removeprefix("urn:uuid:")
+
+    return reference.split("/")[-1]
 
 
 def coding_value(value: Any) -> tuple[str | None, str | None]:
     """
-    Extract code and display text from a FHIR CodeableConcept.
+    Extract code and display/text from a FHIR CodeableConcept.
+
+    Supports:
+        {"coding": [{"code": "...", "display": "..."}]}
+
+    and:
+        {"text": "..."}
     """
     if not isinstance(value, dict):
         return None, None
 
-    coding = value.get("coding", [])
+    coding = value.get("coding")
 
-    if not coding:
-        return None, value.get("text")
+    if isinstance(coding, list) and coding:
+        first = coding[0]
 
-    first = coding[0]
+        if isinstance(first, dict):
+            return (
+                first.get("code"),
+                first.get("display") or value.get("text"),
+            )
 
-    return (
-        first.get("code"),
-        first.get("display") or value.get("text"),
-    )
+    return None, value.get("text")
 
 
-def parse_datetime(value: Any) -> str | None:
-    """Return a normalized ISO datetime/date string."""
-    if not value:
+def first_reference(value: Any) -> str | None:
+    """Extract the first reference from either a reference or list."""
+    if isinstance(value, dict):
+        return reference_id(value)
+
+    if isinstance(value, list) and value:
+        return reference_id(value[0])
+
+    return None
+
+
+def first_codeable_concept(value: Any) -> Any:
+    """
+    Return the first CodeableConcept from either a single object or list.
+    """
+    if isinstance(value, dict):
+        return value
+
+    if isinstance(value, list) and value:
+        return value[0]
+
+    return None
+
+
+def period_value(resource: dict, field: str) -> str | None:
+    """Safely extract a value from a FHIR Period."""
+    period = resource.get(field)
+
+    if not isinstance(period, dict):
         return None
 
-    return str(value)
+    value = period.get("start")
 
+    if value is None and field == "period":
+        value = period.get("end")
+
+    return value
+
+
+# ---------------------------------------------------------------------------
+# Patient
+# ---------------------------------------------------------------------------
 
 def normalize_patient(resource: dict) -> dict:
     race = None
@@ -54,21 +99,56 @@ def normalize_patient(resource: dict) -> dict:
     birth_city = None
     birth_state = None
 
-    for extension in resource.get("extension", []):
-        url = extension.get("url", "")
+    extensions = resource.get("extension", [])
 
-        if url.endswith("us-core-race"):
-            concept = extension.get("valueCodeableConcept", {})
-            _, race = coding_value(concept)
+    if isinstance(extensions, list):
+        for extension in extensions:
+            if not isinstance(extension, dict):
+                continue
 
-        elif url.endswith("us-core-ethnicity"):
-            concept = extension.get("valueCodeableConcept", {})
-            _, ethnicity = coding_value(concept)
+            url = extension.get("url", "")
 
-        elif url.endswith("placeOfBirth"):
-            address = extension.get("valueAddress", {})
-            birth_city = address.get("city")
-            birth_state = address.get("state")
+            if url.endswith("us-core-race"):
+                concept = extension.get(
+                    "valueCodeableConcept",
+                    {},
+                )
+
+                _, race = coding_value(concept)
+
+            elif url.endswith("us-core-ethnicity"):
+                concept = extension.get(
+                    "valueCodeableConcept",
+                    {},
+                )
+
+                _, ethnicity = coding_value(concept)
+
+            elif url.endswith("placeOfBirth"):
+                address = extension.get(
+                    "valueAddress",
+                    {},
+                )
+
+                if isinstance(address, dict):
+                    birth_city = address.get("city")
+                    birth_state = address.get("state")
+
+    family_name = None
+    given_name = None
+
+    names = resource.get("name")
+
+    if isinstance(names, list) and names:
+        name = names[0]
+
+        if isinstance(name, dict):
+            family_name = name.get("family")
+
+            given = name.get("given")
+
+            if isinstance(given, list) and given:
+                given_name = given[0]
 
     marital_code, marital_display = coding_value(
         resource.get("maritalStatus")
@@ -78,6 +158,8 @@ def normalize_patient(resource: dict) -> dict:
         "patient_id": resource.get("id"),
         "gender": resource.get("gender"),
         "birth_date": resource.get("birthDate"),
+        "family_name": family_name,
+        "given_name": given_name,
         "marital_status": marital_display or marital_code,
         "race": race,
         "ethnicity": ethnicity,
@@ -87,57 +169,128 @@ def normalize_patient(resource: dict) -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# Encounter
+# ---------------------------------------------------------------------------
+
 def normalize_encounter(resource: dict) -> dict:
     encounter_code, encounter_display = coding_value(
         resource.get("type")
     )
 
-    encounter_class = resource.get("class", {})
+    encounter_class = resource.get("class")
+
+    class_code = None
+
+    if isinstance(encounter_class, dict):
+        class_code = encounter_class.get("code")
+
+    elif isinstance(encounter_class, list) and encounter_class:
+        first_class = encounter_class[0]
+
+        if isinstance(first_class, dict):
+            class_code = first_class.get("code")
+
+    reason = resource.get("reason")
+
+    reason_code = None
+
+    if isinstance(reason, dict):
+        concept = reason.get("valueCodeableConcept")
+
+        if concept is None:
+            concept = reason.get("code")
+
+        reason_code, _ = coding_value(concept)
+
+    elif isinstance(reason, list) and reason:
+        first_reason = reason[0]
+
+        if isinstance(first_reason, dict):
+            concept = first_reason.get(
+                "valueCodeableConcept"
+            )
+
+            if concept is None:
+                concept = first_reason.get("code")
+
+            reason_code, _ = coding_value(concept)
+
+    period = resource.get("period")
+
+    start_datetime = None
+    end_datetime = None
+
+    if isinstance(period, dict):
+        start_datetime = period.get("start")
+        end_datetime = period.get("end")
 
     return {
         "encounter_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("patient")),
+        "patient_id": reference_id(
+            resource.get("patient")
+        ),
         "status": resource.get("status"),
-        "encounter_type": encounter_display or encounter_code,
-        "class": encounter_class.get("code"),
-        "start_datetime": (
-            resource.get("period", {}).get("start")
+        "encounter_type": (
+            encounter_display or encounter_code
         ),
-        "end_datetime": (
-            resource.get("period", {}).get("end")
-        ),
-        "reason_code": (
-            coding_value(resource.get("reason", [{}])[0].get("valueCodeableConcept"))
-            if resource.get("reason")
-            else (None, None)
-        )[0],
+        "class": class_code,
+        "start_datetime": start_datetime,
+        "end_datetime": end_datetime,
+        "reason_code": reason_code,
     }
 
 
+# ---------------------------------------------------------------------------
+# Condition
+# ---------------------------------------------------------------------------
+
 def normalize_condition(resource: dict) -> dict:
-    code, display = coding_value(resource.get("code"))
+    code, display = coding_value(
+        resource.get("code")
+    )
+
+    clinical_code, clinical_display = coding_value(
+        resource.get("clinicalStatus")
+    )
+
+    verification_code, verification_display = coding_value(
+        resource.get("verificationStatus")
+    )
 
     return {
         "condition_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("subject")),
-        "encounter_id": reference_id(resource.get("context")),
+        "patient_id": reference_id(
+            resource.get("subject")
+        ),
+        "encounter_id": reference_id(
+            resource.get("context")
+        ),
         "condition_code": code,
         "condition_display": display,
         "clinical_status": (
-            coding_value(resource.get("clinicalStatus"))[1]
-            or coding_value(resource.get("clinicalStatus"))[0]
+            clinical_display or clinical_code
         ),
         "verification_status": (
-            coding_value(resource.get("verificationStatus"))[1]
-            or coding_value(resource.get("verificationStatus"))[0]
+            verification_display or verification_code
         ),
-        "onset_datetime": resource.get("onsetDateTime"),
-        "abatement_datetime": resource.get("abatementDateTime"),
+        "onset_datetime": resource.get(
+            "onsetDateTime"
+        ),
+        "abatement_datetime": resource.get(
+            "abatementDateTime"
+        ),
     }
 
 
+# ---------------------------------------------------------------------------
+# Observation
+# ---------------------------------------------------------------------------
+
 def normalize_observation(resource: dict) -> dict:
-    code, display = coding_value(resource.get("code"))
+    code, display = coding_value(
+        resource.get("code")
+    )
 
     value_numeric = None
     value_unit = None
@@ -146,71 +299,127 @@ def normalize_observation(resource: dict) -> dict:
 
     quantity = resource.get("valueQuantity")
 
-    if quantity:
+    if isinstance(quantity, dict):
         value_numeric = quantity.get("value")
         value_unit = quantity.get("unit")
 
-    concept = resource.get("valueCodeableConcept")
+    concept = resource.get(
+        "valueCodeableConcept"
+    )
 
-    if concept:
-        value_code, value_text = coding_value(concept)
+    if isinstance(concept, dict):
+        value_code, value_text = coding_value(
+            concept
+        )
+
+    effective_datetime = resource.get(
+        "effectiveDateTime"
+    )
+
+    if effective_datetime is None:
+        effective_period = resource.get(
+            "effectivePeriod"
+        )
+
+        if isinstance(effective_period, dict):
+            effective_datetime = effective_period.get(
+                "start"
+            )
 
     return {
         "observation_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("subject")),
-        "encounter_id": reference_id(resource.get("encounter")),
+        "patient_id": reference_id(
+            resource.get("subject")
+        ),
+        "encounter_id": reference_id(
+            resource.get("encounter")
+        ),
         "status": resource.get("status"),
         "code": code,
         "display": display,
-        "effective_datetime": resource.get("effectiveDateTime"),
+        "effective_datetime": effective_datetime,
         "value_numeric": value_numeric,
         "value_unit": value_unit,
         "value_code": value_code,
         "value_text": value_text,
-        "has_components": bool(resource.get("component")),
+        "has_components": bool(
+            resource.get("component")
+        ),
     }
 
 
+# ---------------------------------------------------------------------------
+# Immunization
+# ---------------------------------------------------------------------------
+
 def normalize_immunization(resource: dict) -> dict:
-    code, display = coding_value(resource.get("vaccineCode"))
+    code, display = coding_value(
+        resource.get("vaccineCode")
+    )
 
     return {
         "immunization_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("patient")),
-        "encounter_id": reference_id(resource.get("encounter")),
+        "patient_id": reference_id(
+            resource.get("patient")
+        ),
+        "encounter_id": reference_id(
+            resource.get("encounter")
+        ),
         "vaccine_code": code,
         "vaccine_display": display,
         "date": resource.get("date"),
         "status": resource.get("status"),
-        "primary_source": resource.get("primarySource"),
+        "primary_source": resource.get(
+            "primarySource"
+        ),
     }
 
 
+# ---------------------------------------------------------------------------
+# Procedure
+# ---------------------------------------------------------------------------
+
 def normalize_procedure(resource: dict) -> dict:
-    code, display = coding_value(resource.get("code"))
+    code, display = coding_value(
+        resource.get("code")
+    )
 
     performed_start = None
     performed_end = None
 
-    if resource.get("performedDateTime"):
-        performed_start = resource["performedDateTime"]
+    performed_datetime = resource.get(
+        "performedDateTime"
+    )
 
-    elif resource.get("performedPeriod"):
-        period = resource["performedPeriod"]
-        performed_start = period.get("start")
-        performed_end = period.get("end")
+    if performed_datetime:
+        performed_start = performed_datetime
 
-    reason_condition_id = None
+    else:
+        performed_period = resource.get(
+            "performedPeriod"
+        )
 
-    reasons = resource.get("reasonReference", [])
+        if isinstance(performed_period, dict):
+            performed_start = performed_period.get(
+                "start"
+            )
 
-    if reasons:
-        reason_condition_id = reference_id(reasons[0])
+            performed_end = performed_period.get(
+                "end"
+            )
+
+    reason_condition_id = first_reference(
+        resource.get("reasonReference")
+    )
 
     return {
         "procedure_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("subject")),
-        "encounter_id": reference_id(resource.get("encounter")),
+        "patient_id": reference_id(
+            resource.get("subject")
+        ),
+        "encounter_id": reference_id(
+            resource.get("encounter")
+        ),
         "procedure_code": code,
         "procedure_display": display,
         "status": resource.get("status"),
@@ -220,81 +429,219 @@ def normalize_procedure(resource: dict) -> dict:
     }
 
 
-def normalize_medication_request(resource: dict) -> dict:
-    code, display = coding_value(
-        resource.get("medicationCodeableConcept")
+# ---------------------------------------------------------------------------
+# MedicationRequest
+# ---------------------------------------------------------------------------
+
+def normalize_medication_request(
+    resource: dict,
+) -> dict:
+    medication = resource.get(
+        "medicationCodeableConcept"
     )
 
-    reason_condition_id = None
+    code, display = coding_value(
+        medication
+    )
 
-    reasons = resource.get("reasonReference", [])
-
-    if reasons:
-        reason_condition_id = reference_id(reasons[0])
+    reason_condition_id = first_reference(
+        resource.get("reasonReference")
+    )
 
     return {
-        "medication_request_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("patient")),
-        "encounter_id": reference_id(resource.get("context")),
+        "medication_request_id": resource.get(
+            "id"
+        ),
+        "patient_id": reference_id(
+            resource.get("patient")
+        ),
+        "encounter_id": reference_id(
+            resource.get("context")
+        ),
         "medication_code": code,
         "medication_display": display,
         "status": resource.get("status"),
         "stage": resource.get("stage"),
-        "date_written": resource.get("dateWritten"),
+        "date_written": resource.get(
+            "dateWritten"
+        ),
         "reason_condition_id": reason_condition_id,
-        "dosage_instruction": resource.get("dosageInstruction"),
+        "dosage_instruction": resource.get(
+            "dosageInstruction"
+        ),
     }
 
+
+# ---------------------------------------------------------------------------
+# CarePlan
+# ---------------------------------------------------------------------------
 
 def normalize_careplan(resource: dict) -> dict:
     category_code, category_display = coding_value(
         resource.get("category")
     )
 
-    condition_id = None
+    condition_id = first_reference(
+        resource.get("addresses")
+    )
 
-    addresses = resource.get("addresses", [])
+    period = resource.get("period")
 
-    if addresses:
-        condition_id = reference_id(addresses[0])
+    period_start = None
+    period_end = None
 
-    period = resource.get("period", {})
+    if isinstance(period, dict):
+        period_start = period.get("start")
+        period_end = period.get("end")
 
     return {
         "careplan_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("subject")),
-        "encounter_id": reference_id(resource.get("context")),
+        "patient_id": reference_id(
+            resource.get("subject")
+        ),
+        "encounter_id": reference_id(
+            resource.get("context")
+        ),
         "status": resource.get("status"),
-        "category": category_display or category_code,
-        "period_start": period.get("start"),
-        "period_end": period.get("end"),
+        "category": (
+            category_display or category_code
+        ),
+        "period_start": period_start,
+        "period_end": period_end,
         "condition_id": condition_id,
     }
 
 
-def normalize_allergy(resource: dict) -> dict:
-    code, display = coding_value(resource.get("code"))
+# ---------------------------------------------------------------------------
+# AllergyIntolerance
+# ---------------------------------------------------------------------------
+
+def normalize_allergy(
+    resource: dict,
+) -> dict:
+    code, display = coding_value(
+        resource.get("code")
+    )
+
+    clinical_code, clinical_display = coding_value(
+        resource.get("clinicalStatus")
+    )
+
+    category = resource.get("category")
+
+    category_value = None
+
+    if isinstance(category, list) and category:
+        category_value = category[0]
+
+    elif isinstance(category, str):
+        category_value = category
 
     return {
         "allergy_id": resource.get("id"),
-        "patient_id": reference_id(resource.get("patient")),
+        "patient_id": reference_id(
+            resource.get("patient")
+        ),
         "clinical_status": (
-            coding_value(resource.get("clinicalStatus"))[1]
-            or coding_value(resource.get("clinicalStatus"))[0]
+            clinical_display or clinical_code
         ),
         "allergy_type": resource.get("type"),
-        "category": resource.get("category", [None])[0],
-        "criticality": resource.get("criticality"),
+        "category": category_value,
+        "criticality": resource.get(
+            "criticality"
+        ),
         "code": code,
         "display": display,
-        "asserted_date": resource.get("assertedDate"),
+        "asserted_date": resource.get(
+            "assertedDate"
+        ),
     }
 
 
-def normalize_resource(resource: dict) -> dict | None:
-    """Dispatch a FHIR resource to its resource-specific normalizer."""
+# ---------------------------------------------------------------------------
+# DiagnosticReport
+# ---------------------------------------------------------------------------
 
-    resource_type = resource.get("resourceType")
+def normalize_diagnostic_report(
+    resource: dict,
+) -> dict:
+    code, display = coding_value(
+        resource.get("code")
+    )
+
+    result_references = resource.get(
+        "result",
+        [],
+    )
+
+    result_observation_ids = []
+
+    if isinstance(result_references, list):
+        for reference in result_references:
+            observation_id = reference_id(
+                reference
+            )
+
+            if observation_id:
+                result_observation_ids.append(
+                    observation_id
+                )
+
+    elif isinstance(result_references, dict):
+        observation_id = reference_id(
+            result_references
+        )
+
+        if observation_id:
+            result_observation_ids.append(
+                observation_id
+            )
+
+    return {
+        "diagnostic_report_id": resource.get(
+            "id"
+        ),
+        "patient_id": reference_id(
+            resource.get("subject")
+        ),
+        "encounter_id": reference_id(
+            resource.get("encounter")
+        ),
+        "status": resource.get("status"),
+        "code": code,
+        "display": display,
+        "effective_datetime": resource.get(
+            "effectiveDateTime"
+        ),
+        "issued_datetime": resource.get(
+            "issued"
+        ),
+        "result_observation_ids": (
+            result_observation_ids
+        ),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Dispatcher
+# ---------------------------------------------------------------------------
+
+def normalize_resource(
+    resource: dict,
+) -> dict | None:
+    """
+    Dispatch a FHIR resource to its resource-specific
+    normalizer.
+
+    Returns None for unsupported resource types.
+    """
+
+    if not isinstance(resource, dict):
+        return None
+
+    resource_type = resource.get(
+        "resourceType"
+    )
 
     normalizers = {
         "Patient": normalize_patient,
@@ -303,12 +650,19 @@ def normalize_resource(resource: dict) -> dict | None:
         "Observation": normalize_observation,
         "Immunization": normalize_immunization,
         "Procedure": normalize_procedure,
-        "MedicationRequest": normalize_medication_request,
+        "MedicationRequest": (
+            normalize_medication_request
+        ),
         "CarePlan": normalize_careplan,
         "AllergyIntolerance": normalize_allergy,
+        "DiagnosticReport": (
+            normalize_diagnostic_report
+        ),
     }
 
-    normalizer = normalizers.get(resource_type)
+    normalizer = normalizers.get(
+        resource_type
+    )
 
     if normalizer is None:
         return None

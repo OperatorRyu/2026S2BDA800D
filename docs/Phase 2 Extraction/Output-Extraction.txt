@@ -1,0 +1,31 @@
+============================================================
+EXTRACTION RESULTS
+============================================================
+JSON files processed : 129,218
+Resources processed  : 8,913,460
+Resources normalized : 8,913,460
+Resources skipped    : 0
+Processing time      : 116.82 seconds
+
+RESOURCE COUNTS
+------------------------------------------------------------
+Observation               4,756,568 normalized= 4,756,568 skipped=       0
+Encounter                 1,201,625 normalized= 1,201,625 skipped=       0
+Immunization                862,744 normalized=   862,744 skipped=       0
+Procedure                   563,951 normalized=   563,951 skipped=       0
+Condition                   469,866 normalized=   469,866 skipped=       0
+MedicationRequest           334,869 normalized=   334,869 skipped=       0
+DiagnosticReport            304,845 normalized=   304,845 skipped=       0
+CarePlan                    238,667 normalized=   238,667 skipped=       0
+Patient                     129,218 normalized=   129,218 skipped=       0
+AllergyIntolerance           51,107 normalized=    51,107 skipped=       0
+
+PARQUET OUTPUT
+------------------------------------------------------------
+Parquet files : 896
+Parquet size  : 0.55 GiB
+
+============================================================
+COMPLETE
+============================================================
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 

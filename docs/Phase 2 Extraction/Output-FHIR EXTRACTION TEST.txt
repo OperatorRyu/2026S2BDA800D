@@ -1,0 +1,13 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.extraction.extract_fhir
+Patient              6bb7cb36-4921-409d-aa5b-91af52c88713
+Encounter            fdb449ab-d475-4f8b-9006-c7e46a43fbf1
+Condition            bef91a0d-67a9-4e2c-b2dc-64e2e91cdb3f
+Observation          4342ffca-16f2-4e6e-9916-d581df1a4232
+Observation          be6f7c13-b255-4065-977d-305a0e2c3bd0
+
+============================================================
+FHIR EXTRACTION TEST
+============================================================
+JSON files : 129,218
+Resources  : 8,913,460
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 
