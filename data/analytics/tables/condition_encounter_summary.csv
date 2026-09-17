@@ -1,0 +1,123 @@
+condition_code,condition_display,condition_count,patients,encounters
+444814009,Viral sinusitis (disorder),78920,53745,75976
+195662009,Acute viral pharyngitis (disorder),43503,35299,43042
+10509002,Acute bronchitis (disorder),35051,30365,34700
+15777000,Prediabetes,33455,33455,33455
+38341003,Hypertension,29319,29319,29319
+40055000,Chronic sinusitis (disorder),23662,23373,23441
+72892002,Normal pregnancy,19935,10229,18035
+65363002,Otitis media,12209,9202,12065
+43878008,Streptococcal sore throat (disorder),10124,9520,10107
+44465007,Sprain of ankle,7398,7134,7386
+44054006,Diabetes,6912,6912,6912
+68496003,Polyp of colon,7089,6377,6746
+230690007,Stroke,5851,5851,5851
+6738008,Female infertility,5418,5418,5418
+428251008,History of appendectomy,5189,5189,5189
+74400008,Appendicitis,5189,5189,5189
+36971009,Sinusitis (disorder),4290,4202,4279
+62106007,Concussion with no loss of consciousness,4251,4166,4248
+75498004,Acute bacterial sinusitis (disorder),4234,4115,4225
+239873007,Osteoarthritis of knee,4057,4057,4057
+162573006,Suspected lung cancer (situation),3992,3992,3992
+185086009,Chronic obstructive bronchitis (disorder),3967,3967,3967
+87433001,Pulmonary emphysema (disorder),3934,3934,3934
+429007001,History of cardiac arrest (situation),3741,3741,3741
+410429000,Cardiac Arrest,3741,3741,3741
+195967001,Asthma,3557,3557,3557
+254637007,Non-small cell lung cancer (disorder),3408,3408,3408
+39848009,Whiplash injury to neck,3378,3321,3375
+70704007,Sprain of wrist,3168,3116,3167
+24079001,Atopic dermatitis,3090,3090,3090
+446096008,Perennial allergic rhinitis,2884,2884,2884
+368581000119106,Neuropathy due to type 2 diabetes mellitus (disorder),2803,2803,2803
+232353008,Perennial allergic rhinitis with seasonal variation,2714,2714,2714
+127013003,Diabetic renal disease (disorder),2501,2501,2501
+65966004,Fracture of forearm,2500,2460,2499
+58150001,Fracture of clavicle,2499,2439,2496
+263102004,Fracture subluxation of wrist,2450,2401,2450
+19169002,Miscarriage in first trimester,2419,2237,2417
+16114001,Fracture of ankle,2382,2330,2381
+26929004,Alzheimer's disease (disorder),2247,2247,2247
+422034002,Diabetic retinopathy associated with type II diabetes mellitus (disorder),2237,2237,2237
+301011002,Escherichia coli urinary tract infection,2203,2026,2203
+233678006,Childhood asthma,2138,2138,2138
+283371005,Laceration of forearm,2126,2111,2126
+284551006,Laceration of foot,2110,2084,2109
+283385000,Laceration of thigh,2063,2048,2063
+284549007,Laceration of hand,2048,2032,2048
+370247008,Facial laceration,1986,1977,1985
+713197008,Recurrent rectal polyp,1945,1907,1922
+423121009,"Non-small cell carcinoma of lung, TNM stage 4 (disorder)",1910,1910,1910
+201834006,"Localized, primary osteoarthritis of the hand",1703,1703,1703
+267253006,Fetus with chromosomal abnormality,1696,1612,1695
+403190006,First degree burn,1601,1587,1601
+239872002,Osteoarthritis of hip,1541,1541,1541
+47693006,Rupture of appendix,1524,1524,1524
+38822007,Cystitis,1436,1355,1435
+1551000119108,Nonproliferative diabetic retinopathy due to type 2 diabetes mellitus (disorder),1423,1423,1423
+367498001,Seasonal allergic rhinitis,1393,1393,1393
+192127007,Child attention deficit disorder,1341,1341,1341
+55680006,Drug overdose,1235,1235,1235
+241929008,Acute allergic reaction,1210,1137,1210
+359817006,Closed fracture of hip,1198,1186,1198
+33737001,Fracture of rib,1184,1165,1184
+403191005,Second degree burn,1127,1121,1127
+62564004,Concussion with loss of consciousness,1125,1121,1125
+196416002,Impacted molars,1034,1034,1034
+307731004,Injury of tendon of the rotator cuff of shoulder,1009,1004,1009
+197927001,Recurrent urinary tract infection,977,977,977
+82423001,Chronic pain,972,972,972
+124171000119105,Chronic intractable migraine without aura,930,930,930
+90560007,Gout,858,858,858
+198992004,Antepartum eclampsia,857,836,857
+398254007,Preeclampsia,843,831,842
+90781000119102,Microalbuminuria due to type 2 diabetes mellitus (disorder),750,750,750
+230265002,Familial Alzheimer's disease of early onset (disorder),718,718,718
+233604007,Pneumonia,713,713,713
+35999006,Blighted ovum,711,696,711
+275272006,Brain damage - traumatic,687,687,687
+424132000,"Non-small cell carcinoma of lung, TNM stage 1 (disorder)",643,643,643
+254632001,Small cell carcinoma of lung (disorder),581,581,581
+97331000119101,Macular edema and retinopathy due to type 2 diabetes mellitus (disorder),522,522,522
+444448004,Injury of medial collateral ligament of knee,492,489,492
+109838007,Overlapping malignant neoplasm of colon,476,476,476
+67841000119103,"Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)",455,455,455
+40275004,Contact dermatitis,442,442,442
+30832001,Rupture of patellar tendon,437,435,437
+363406005,Malignant tumor of colon,432,432,432
+425048006,"Non-small cell carcinoma of lung, TNM stage 2 (disorder)",429,429,429
+422968005,"Non-small cell carcinoma of lung, TNM stage 3 (disorder)",424,424,424
+85116003,Miscarriage in second trimester,418,413,418
+95417003,Primary fibromyalgia syndrome,360,360,360
+1501000119109,Proliferative diabetic retinopathy due to type II diabetes mellitus (disorder),359,359,359
+444470001,Injury of anterior cruciate ligament,346,345,346
+239720000,Tear of meniscus of knee,335,335,335
+69896004,Rheumatoid arthritis,283,283,283
+110030002,Concussion injury of brain,278,278,278
+79586000,Tubal pregnancy,263,261,263
+6072007,Bleeding from anus,254,254,254
+236077008,Protracted diarrhea,254,254,254
+262574004,Bullet wound,247,246,247
+93761005,Primary malignant neoplasm of colon,183,183,183
+157141000119108,Proteinuria due to type 2 diabetes mellitus (disorder),158,158,158
+403192003,Third degree burn,110,110,110
+37849005,Congenital uterine anomaly,104,104,104
+698754002,Chronic paralysis due to lesion of spinal cord,94,94,94
+15724005,Fracture of vertebral column without spinal cord injury,80,80,80
+94260004,Secondary malignant neoplasm of colon,78,78,78
+609496007,Complication occuring during pregnancy,58,58,58
+67831000119107,"Primary small cell malignant neoplasm of lung, TNM stage 3 (disorder)",56,56,56
+67821000119109,"Primary small cell malignant neoplasm of lung, TNM stage 2 (disorder)",50,50,50
+429280009,History of amputation of foot (situation),34,34,34
+161622006,History of lower limb amputation (situation),28,28,28
+45816000,Pyelonephritis,25,25,25
+1734006,Fracture of the vertebral column with spinal cord injury,24,24,24
+60951000119105,Blindness due to type 2 diabetes mellitus (disorder),20,20,20
+67811000119102,"Primary small cell malignant neoplasm of lung, TNM stage 1 (disorder)",20,20,20
+200936003,Lupus erythematosus,9,9,9
+46177005,End stage renal disease (disorder),6,6,6
+86849004,Suicidal deliberate poisoning,2,2,2
+698423002,History of disarticulation at wrist (situation),2,2,2
+161621004,History of upper limb amputation (situation),1,1,1
+287185009,Attempted suicide - cut/stab,1,1,1

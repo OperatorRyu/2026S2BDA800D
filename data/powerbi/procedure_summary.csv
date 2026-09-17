@@ -1,0 +1,67 @@
+procedure_code,procedure_display,procedure_count,unique_patients
+428191000124101,Documentation of current medications,260141,95937
+180256009,Subcutaneous immunotherapy,91136,2379
+73761001,Colonoscopy,35963,25490
+127783003,Spirometry (procedure),17409,4141
+23426006,Measurement of respiratory function (procedure),17091,16021
+703423002,Combined chemotherapy and radiation therapy (procedure),15915,1383
+252160004,Standard pregnancy test,13487,9062
+288086009,Suture open wound,10232,9798
+228557008,Cognitive and behavioral therapy,9568,602
+117015009,Throat culture (procedure) ,9544,9006
+274474001,Bone immobilization,8240,7770
+311791003,Information gathering (procedure),7374,2027
+269911007,Sputum examination (procedure),7005,6810
+66348005,Childbirth,6616,5550
+274031008,Rectal polypectomy,5125,4319
+395142003,Allergy screening test,4927,4151
+1015401000000102,Fecal occult blood test,4211,4161
+15081005,Pulmonary rehabilitation (regime/therapy),4200,1009
+305428000,Admission to orthopedic department,3581,3484
+714812005,Induced termination of pregnancy,2955,2692
+85548006,Episiotomy,2805,2616
+399208008,Plain chest X-ray (procedure),2409,2391
+11466000,Cesarean section,2236,2115
+18946005,Epidural anesthesia,2169,2053
+433112001,Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,2053,1975
+384700001,Injection of tetanus antitoxin,2009,1996
+31208007,Medical induction of labor,1871,1795
+65588006,Premature birth of newborn,1865,1779
+699253003,Surgical manipulation of joint of knee,1237,1229
+313191000,Injection of adrenaline,1211,1137
+237001001,Augmentation of labor,1000,975
+236974004,Instrumental delivery,808,795
+418891003,Computed tomography of chest and abdomen,757,757
+698354004,Magnetic resonance imaging for measurement of brain volume (procedure),755,755
+43075005,Partial resection of colon,716,716
+171231001,Asthma screening,700,700
+80146002,Appendectomy,675,675
+18286008,Catheter ablation of tissue of heart,553,552
+447365002,Insertion of biventricular implantable cardioverter defibrillator,553,552
+112790001,Nasal sinus endoscopy (procedure),527,527
+76164006,Biopsy of colon,417,415
+65546002,Extraction of wisdom tooth,286,285
+445912000,Excision of fallopian tube and surgical removal of ectopic pregnancy,259,258
+432231006,Fine needle aspiration biopsy of lung (procedure),200,200
+167995008,Sputum microscopy (procedure),198,198
+91602002,Thoracentesis (procedure),179,179
+173160006,Diagnostic fiberoptic bronchoscopy (procedure),178,178
+305433001,Admission to trauma surgery department,141,141
+305340004,Admission to long stay hospital,109,109
+183450002,Admission to burn unit,109,109
+387685009,Surgical manipulation of shoulder joint,93,93
+429609002,Lung volume reduction surgery (procedure),41,41
+177157003,Spontaneous breech delivery,35,35
+88039007,Transplant of lung (procedure),20,20
+305425002,Admission to neurosurgical department,13,13
+52734007,Total replacement of hip,12,12
+609588000,Total knee replacement,9,8
+180030006,Amputation of left foot,4,4
+74857009,"Hospital admission, short-term, 24 hours",3,3
+88848003,Psychiatric follow-up,3,3
+90407005,Evaluation of psychiatric state of patient,3,3
+265764009,Renal dialysis (procedure),2,1
+387607004,Construction of diverting colostomy,2,2
+79733001,Amputation of left leg,2,2
+180030006,Amputation of right foot,2,2
+79733001,Amputation of right leg,2,2

@@ -1,0 +1,37 @@
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ python -m src.analysis.aggregate_analyse
+============================================================
+FHIR ANALYTICAL AGGREGATION
+============================================================
+
+Generating analytical tables...
+
+Wrote resource summary → data/analytics/summaries/resource_summary.csv
+Wrote 129,218 rows → data/analytics/tables/patient_summary.csv
+Wrote 122 rows → data/analytics/tables/condition_summary.csv
+Wrote 6 rows → data/analytics/tables/encounter_summary.csv
+Wrote 122 rows → data/analytics/tables/condition_encounter_summary.csv
+Wrote 73 rows → data/analytics/tables/medication_summary.csv
+Wrote 66 rows → data/analytics/tables/procedure_summary.csv
+Wrote 2 rows → data/analytics/tables/utilisation_by_gender.csv
+Wrote 5 rows → data/analytics/tables/utilisation_by_age_group.csv
+Wrote 86 rows → data/analytics/tables/encounters_over_time.csv
+
+Generating visualisations...
+
+Wrote chart → data/analytics/charts/top_conditions.png
+Wrote chart → data/analytics/charts/top_medications.png
+Wrote chart → data/analytics/charts/top_procedures.png
+Wrote chart → data/analytics/charts/encounters_by_age_group.png
+Wrote chart → data/analytics/charts/encounters_by_gender.png
+Wrote chart → data/analytics/charts/encounters_over_time.png
+Wrote analysis summary → data/analytics/summaries/analysis_summary.md
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+
+Outputs:
+  Tables   : data/analytics/tables
+  Summaries: data/analytics/summaries
+  Charts   : data/analytics/charts
+(.venv) [ryu@cyberphantom 2026S2BDA800D]$ 

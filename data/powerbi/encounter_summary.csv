@@ -1,0 +1,7 @@
+encounter_type,class,status,encounter_count,unique_patients
+,outpatient,finished,627979,106547
+,ambulatory,finished,494752,102968
+,emergency,finished,67039,47785
+,inpatient,finished,11135,4259
+,daytime,finished,716,713
+,,finished,4,4

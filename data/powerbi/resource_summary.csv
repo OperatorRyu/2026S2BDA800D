@@ -1,0 +1,11 @@
+resource_type,row_count
+Observation,4756568
+Encounter,1201625
+Immunization,862744
+Procedure,563951
+Condition,469866
+MedicationRequest,334869
+DiagnosticReport,304845
+CarePlan,238667
+Patient,129218
+AllergyIntolerance,51107

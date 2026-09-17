@@ -1,0 +1,74 @@
+medication_code,medication_display,medication_count,unique_patients
+834060,Penicillin V Potassium 250 MG,58790,45546
+834101,Penicillin V Potassium 500 MG,29017,23852
+608680,Acetaminophen 160 MG,26554,23837
+824184, Amoxicillin 250 MG / Clavulanate 125 MG [Augmentin],17057,15593
+1736854,Cisplatin 50 MG Injection,13085,890
+313782,Acetaminophen 325 MG Oral Tablet,12480,11544
+310965,Ibuprofen 200 MG Oral Tablet,11882,11103
+849574,Naproxen sodium 220 MG Oral Tablet,11871,11099
+583214,PACLitaxel 100 MG Injection,11454,765
+727316,0.3 ML EPINEPHrine 0.5 MG/ML Auto-Injector,8422,8422
+1020137,Dextromethorphan Hydrobromide 1 MG/ML,8278,8012
+282464,Acetaminophen 160 MG Oral Tablet,8185,6519
+198405,Ibuprofen 100 MG Oral Tablet,8052,6448
+575971,oxaliplatin 5 MG/ML [Eloxatin],7573,1281
+1803932,Leucovorin 100 MG Injection,7573,1281
+896188,Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT [Advair],7312,7312
+849727,Naproxen sodium 220 MG [Aleve],7310,7309
+392151,Amoxicillin 200 MG Oral Tablet,6522,5169
+860975,24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet,5673,5673
+895994,120 ACTUAT Fluticasone propionate 0.044 MG/ACTUAT Metered Dose Inhaler,5155,5155
+745679,200 ACTUAT Albuterol 0.09 MG/ACTUAT Metered Dose Inhaler,5155,5155
+1094108,Phenazopyridine hydrochloride 100 MG [Pyridium],3666,3176
+568530,Nitrofurantoin 5 MG/ML [Furadantin],3665,3176
+861467,Meperidine Hydrochloride 50 MG Oral Tablet,3288,3200
+1049630,diphenhydrAMINE Hydrochloride 25 MG Oral Tablet,3250,3250
+665078,Loratadine 5 MG Chewable Tablet,3045,3045
+1049221,Acetaminophen 325 MG / oxyCODONE Hydrochloride 5 MG Oral Tablet,2692,2653
+857005,Acetaminophen 325 MG / HYDROcodone Bitartrate 7.5 MG Oral Tablet,2296,2260
+308192,Amoxicillin 500 MG Oral Tablet,2209,2182
+106258,Hydrocortisone 10 MG/ML Topical Cream,2183,2183
+997488,Fexofenadine hydrochloride 30 MG Oral Tablet,2165,2165
+239981,Chlorpheniramine 2 MG Chewable Tablet,2068,2068
+309097,Cefuroxime 250 MG Oral Tablet,2058,1953
+308056,Alteplase 1 MG/ML Injectable Solution,2053,1975
+602735,Galantamine 4 MG [Razadyne],2053,2053
+309362,Clopidogrel 75 MG Oral Tablet,2053,1975
+106892,"insulin human, isophane 70 UNT/ML / Regular Insulin, Human 30 UNT/ML Injectable Suspension [Humulin]",2008,2008
+1734340,Etoposide 100 MG Injection,1631,125
+897122,3 ML liraglutide 6 MG/ML Pen Injector,1243,613
+197378,Astemizole 10 MG Oral Tablet,1230,1230
+996741,Memantine hydrochloride 2 MG/ML [Namenda],1218,1218
+312617,predniSONE 5 MG Oral Tablet,1211,1137
+849437,Naproxen sodium 550 MG [Anaprox],900,866
+1014676,cetirizine hydrochloride 5 MG Oral Tablet,734,734
+141918,Terfenadine 60 MG Oral Tablet,626,626
+1648767,"NITROFURANTOIN, MACROCRYSTALS 50 MG [Macrodantin]",581,570
+834357,3 ML Amiodarone hydrocholoride 50 MG/ML Prefilled Syringe,553,552
+1190795,Atropine Sulfate 1 MG/ML Injectable Solution,553,552
+727374,1 ML Epinephrine 1 MG/ML Prefilled Syringe,553,552
+106892,Insulin Lispro 100 UNT/ML Injectable Solution [Humalog],522,522
+573839,Allopurinol 100 MG [Zyloprim],423,357
+311372,Loratadine 10 MG Oral Tablet,412,412
+998582,Donepezil hydrochloride 23 MG [Aricept],360,360
+1091166,Methylphenidate Hydrochloride 20 MG [Ritalin],352,352
+617944,Atomoxetine 100 MG [Strattera],320,320
+1602593,Donepezil hydrochloride 10 MG / Memantine hydrochloride 28 MG [Namzaric],314,314
+1310197,Acetaminophen 300 MG / HYDROcodone Bitartrate 5 MG [Vicodin],294,293
+997221,Donepezil hydrochloride 10 MG [Aricept],284,284
+997501,Fexofenadine hydrochloride 60 MG Oral Tablet,278,278
+1049639,Acetaminophen 325 MG / oxyCODONE Hydrochloride 5 MG [Percocet],277,277
+1049544,oxyCODONE Hydrochloride 15 MG [OxyCONTIN],265,264
+607015,pregabalin 100 MG [Lyrica],245,183
+1373463,canagliflozin 100 MG Oral Tablet,204,118
+596927,DULoxetine 20 MG [Cymbalta],192,163
+858069,Colchicine 0.6 MG [Colcrys],177,166
+389128,Chlorpheniramine 8 MG Oral Tablet,165,165
+833137,Milnacipran hydrochloride 100 MG [Savella],160,136
+313185,Tacrine 10 MG Oral Capsule,131,131
+575020,Methotrexate 10 MG [Trexall],131,131
+1014678,cetirizine hydrochloride 10 MG Oral Tablet,124,124
+567645,predniSONE 2.5 MG [Deltasone],21,8
+835900,"cycloSPORINE, modified 100 MG [Neoral]",17,7
+243670,Aspirin 81 MG Oral Tablet,16,5
